@@ -8,7 +8,7 @@ from datetime import datetime
 
 from google import genai
 from google.genai import types
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect, UploadFile, File
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from pydantic import BaseModel
@@ -221,10 +221,10 @@ class ChatRequest(BaseModel):
 
 
 @app.post("/transcribe")
-async def transcribe_audio(file: UploadFile = File(...)):
+async def transcribe_audio(file: UploadFile = File(...), model: str = Form("gemini-2.0-flash")):
     """
     Multilingual audio transcription using Gemini.
-    Handles code-switching (e.g. Urdu + English mixed in one sentence).
+     Handles code-switching (e.g. Urdu + English mixed in one sentence).
     Frontend records audio as WebM and POSTs it here.
     """
     try:
@@ -233,7 +233,7 @@ async def transcribe_audio(file: UploadFile = File(...)):
 
         def _do_transcribe(client: genai.Client) -> str:
             response = client.models.generate_content(
-                model="gemini-2.0-flash",
+                model=model,
                 contents=[
                     types.Part.from_bytes(data=audio_bytes, mime_type=mime),
                     types.Part.from_text(text=(
