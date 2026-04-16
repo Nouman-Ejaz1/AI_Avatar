@@ -1,0 +1,27 @@
+# Python
+**/__pycache__/
+**/*.py[cod]
+*$py.class
+**/.venv/
+**/venv/
+
+# Node/React
+**/node_modules/
+**/dist/
+frontend/.parcel-cache/
+
+# Secrets & Environment
+**/.env
+**/.env.*
+**/keys.json
+**/*.key
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Files
+.DS_Store
+Thumbs.db
