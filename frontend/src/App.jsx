@@ -148,6 +148,7 @@ export default function App() {
   const [showSettings,  setShowSettings]  = useState(false);
   const [isChatVisible, setIsChatVisible] = useState(true);
   const [themeMode,     setThemeMode]     = useState("dark");
+  const [sttModel,      setSttModel]      = useState("gemini-2.0-flash");
   
   const [availableVoices,   setAvailableVoices]   = useState([]);
   const [selectedVoiceURI,  setSelectedVoiceURI]  = useState("");
@@ -156,6 +157,7 @@ export default function App() {
   const selectedVoiceRef = useRef("");
   const textModelRef    = useRef("gemini-3-flash-preview");
   const sttLangRef      = useRef("auto");
+  const sttModelRef    = useRef("gemini-2.0-flash");
   const mediaRecorderRef = useRef(null);
   const audioChunksRef  = useRef([]);
 
@@ -207,6 +209,7 @@ export default function App() {
   useEffect(() => { textModelRef.current = textModel; }, [textModel]);
   useEffect(() => { selectedVoiceRef.current = selectedVoiceURI; }, [selectedVoiceURI]);
   useEffect(() => { sttLangRef.current = sttLang; }, [sttLang]);
+  useEffect(() => { sttModelRef.current = sttModel; }, [sttModel]);
 
   useEffect(() => {
     const updateVoices = () => {
@@ -368,6 +371,7 @@ export default function App() {
           const blob = new Blob(audioChunksRef.current, { type: "audio/webm" });
           const formData = new FormData();
           formData.append("file", blob, "recording.webm");
+          formData.append("model", sttModelRef.current);
           try {
             const res = await fetch("http://127.0.0.1:8000/transcribe", { method: "POST", body: formData });
             const data = await res.json();
@@ -829,6 +833,21 @@ export default function App() {
                     </optgroup>
                   </select>
                   <p style={{ margin: "8px 0 0", fontSize: "10px", color: theme.muted, opacity: 0.55, fontFamily: "monospace" }}>Active: {textModel}</p>
+                </div>
+
+                <div>
+                  <p style={{ margin: "0 0 6px", fontSize: "11px", color: theme.muted, fontWeight: 800, textTransform: "uppercase", letterSpacing: "1.5px" }}>Transcription Engine</p>
+                  <p style={{ margin: "0 0 12px", fontSize: "10px", color: theme.muted, opacity: 0.6 }}>Gemini model used for multilingual voice-to-text</p>
+                  <select
+                    value={sttModel}
+                    onChange={e => setSttModel(e.target.value)}
+                    style={{ width: "100%", padding: "14px", borderRadius: "12px", background: theme.sub, color: theme.text, border: `2px solid ${theme.border}`, fontSize: "13px", outline: "none", cursor: "pointer" }}
+                  >
+                    <option value="gemini-2.0-flash">gemini-2.0-flash (Fastest)</option>
+                    <option value="gemini-2.0-flash-lite">gemini-2.0-flash-lite</option>
+                    <option value="gemini-1.5-flash">gemini-1.5-flash</option>
+                    <option value="gemini-flash-lite-latest">gemini-flash-lite-latest</option>
+                  </select>
                 </div>
 
                 {voiceMode === 'browser' && (
