@@ -141,7 +141,12 @@ export default function App() {
   const [isTesting,     setIsTesting]     = useState(false);
   const [isListening,   setIsListening]   = useState(false);
   const [sttLang,       setSttLang]       = useState("auto");
-  const [messages,      setMessages]      = useState([]);
+  const [messages,      setMessages]      = useState([
+    { role: 'user', text: "Iris, what's new in the world today? Also, did Pakistan win the cricket match yesterday?" },
+    { role: 'ai', text: "Hello! The tech world is buzzing with new AI breakthroughs today. And yes—Pakistan secured a thrilling 6-wickets victory in the T20 against New Zealand! Would you like me to summarize the highlights?" },
+    { role: 'user', text: "That's great! Set a reminder for me to watch the finals this Saturday at 7 PM." },
+    { role: 'ai', text: "Consider it done. I've noted a reminder for the finals this Saturday at 19:00. I'll make sure you don't miss any of the action!" }
+  ]);
   const [wsStatus,      setWsStatus]      = useState("disconnected");
   const [voiceMode,     setVoiceMode]     = useState("browser");
   const [textModel,     setTextModel]     = useState("gemini-3-flash-preview");
