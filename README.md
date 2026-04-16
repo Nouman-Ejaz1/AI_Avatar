@@ -36,6 +36,16 @@ Iris is a premium 3D AI assistant that brings natural, conversational interactio
 
 ---
 
+### 🎭 Animation Engine (TalkingHead)
+
+Iris uses **TalkingHead** to act as a digital "Puppet Master." Instead of pre-recorded animations, she generates her expressions in real-time.
+
+*   **Automatic Lip-Sync**: The engine analyzes the voice frequency and moves the model's mouth to match the sounds (Visemes) instantly.
+*   **Procedural Life**: It manages subtle movements like blinking, breathing, and head tilts so Iris feels alive even when she isn't speaking.
+*   **High Performance**: Uses WebGL Morph Targets to ensure smooth 60fps animations on almost any hardware.
+
+---
+
 ### ⚡ Quick Start
 
 **Backend**
