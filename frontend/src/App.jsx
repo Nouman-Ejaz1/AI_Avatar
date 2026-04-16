@@ -142,10 +142,10 @@ export default function App() {
   const [isListening,   setIsListening]   = useState(false);
   const [sttLang,       setSttLang]       = useState("auto");
   const [messages,      setMessages]      = useState([
-    { role: 'user', text: "Iris, what's new in the world today? Also, did Pakistan win the cricket match yesterday?" },
-    { role: 'ai', text: "Hello! The tech world is buzzing with new AI breakthroughs today. And yes—Pakistan secured a thrilling 6-wickets victory in the T20 against New Zealand! Would you like me to summarize the highlights?" },
-    { role: 'user', text: "That's great! Set a reminder for me to watch the finals this Saturday at 7 PM." },
-    { role: 'ai', text: "Consider it done. I've noted a reminder for the finals this Saturday at 19:00. I'll make sure you don't miss any of the action!" }
+    { role: 'user', text: "Iris, what's new in the world today? Also, can you tell me what's on my calendar for this week?" },
+    { role: 'ai', text: "Hello! The tech world is buzzing with new AI breakthroughs today. Looking at your calendar, you have a Final Project Presentation this Wednesday at 10 AM and a research sync on Friday. Would you like more details?" },
+    { role: 'user', text: "That's great! Set a reminder for me to review the final slides this Saturday at 7 PM." },
+    { role: 'ai', text: "Consider it done. I've noted a reminder for your slide review this Saturday at 19:00. I'll make sure you stay on track!" }
   ]);
   const [wsStatus,      setWsStatus]      = useState("disconnected");
   const [voiceMode,     setVoiceMode]     = useState("browser");
