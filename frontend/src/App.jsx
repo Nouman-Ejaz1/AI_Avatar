@@ -142,10 +142,10 @@ export default function App() {
   const [isListening,   setIsListening]   = useState(false);
   const [sttLang,       setSttLang]       = useState("auto");
   const [messages,      setMessages]      = useState([
-    { role: 'user', text: "Iris, what's new on the feeds? Also, give me a quick rundown of my schedule for today." },
-    { role: 'ai', text: "Pulling updates... The tech feeds are reporting a major breakthrough in local-first LLMs, and NVIDIA's latest H200 benchmarks are breaking records. For your schedule: You have a Creative Sync at 11 AM, a Stakeholder Demo at 2:30 PM, and I've confirmed your dinner reservation at 'The Grill' for 7:30 PM tonight." },
-    { role: 'user', text: "Good to know. Set a reminder for the design review tomorrow and tell me to bring the latest prototypes." },
-    { role: 'ai', text: "Consider it done. I've noted a reminder for your Design Review tomorrow at 1:00 PM. I'll also send you a ping at 12:45 to make sure you have the physical prototypes ready!" }
+    { role: 'user', text: "Iris, status report. Feed highlights and today's agenda?" },
+    { role: 'ai', text: "On it. Trending: GitHub just moved **Copilot Workspace** out of technical preview, and **Mistral-7B v0.3** was just released with new tool-calling features. Your desk: 10:30 AM **Sprint Review with Ali and Sarah**, 1:00 PM lunch with **Ahmad @ Tuscany**, and your check-in for **Flight PK301** to Dubai is at 4:30 PM. I've pre-booked your ride for 3:45." },
+    { role: 'user', text: "Perfect. Add a note for the lunch with Ahmad to discuss the final Q3 server budget." },
+    { role: 'ai', text: "Handled. I've appended 'Q3 Server Budget Discussion' to the lunch event. I'll give you a quick nudge at 12:55 PM so you have the numbers ready. Anything else before you head out?" }
   ]);
   const [wsStatus,      setWsStatus]      = useState("disconnected");
   const [voiceMode,     setVoiceMode]     = useState("browser");
