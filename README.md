@@ -1,78 +1,72 @@
-# 🌟 Iris AI: Multilingual 3D assistant
+# Meet Iris: Your Multilingual 3D AI companion 🌟
 
-Iris is a premium, high-performance 3D talking AI assistant. Built with **React** and **FastAPI**, it blends real-time 3D rendering with the power of **Google Gemini** to create an immersive, human-like conversational experience.
+Iris isn't just another chatbot. She's a high-performance, real-time 3D assistant designed to feel human. Built with **React** and **FastAPI**, Iris uses the cutting-edge power of **Google Gemini** to bridge the gap between humans and computers.
 
-Iris is designed to understand you naturally—whether you speak Urdu, English, or a mix of both (code-switching). She hears you, understands the context of your previous questions, and responds with natural lip-synced speech and expressive animations.
-
----
-
-## 🎓 Student's Guide: How IRIS Works
-
-If you are a computer science student or new to AI, here is the "big picture" of how we built Iris and why she feels so real.
-
-### 🎭 What is "TalkingHead"? (The Puppet Master)
-In a normal 3D game, an artist has to animate every single movement. For an AI that can say *anything*, we can't do that. Instead, we use a tool called **TalkingHead**.
-*   **Think of it like a Digital Puppet**: TalkingHead is the logic that controls the avatar's face.
-*   **Why we use it**: It automatically "listens" to the audio we generate and moves the avatar's lips to match the sounds (this is called *Lip-Syncing*). It also handles "idle" movements like blinking and breathing so the character doesn't look like a statue.
-
-### 🧠 The Core Logic Flow
-1.  **Recording (The Ears)**: When you click the mic, your browser records your voice as a small audio file.
-2.  **Transcription (The Translator)**: We send that file to **Gemini 2.0 Flash**. It's smart enough to "read" your voice and turn it into text, even if you are mixing Urdu and English!
-3.  **LLM Processing (The Brain)**: The text goes to the **Gemini 3 Flash** model. It looks at your question *and* your previous chat history to decide what to say back.
-4.  **Speech Synthesis (The Voice)**: The brain's text response is turned back into audio.
-5.  **Animation (The Face)**: This is where **TalkingHead** shines. It takes that audio, calculates the mouth shapes (visemes), and moves the 3D model's face in real-time.
+The magic of Iris is that she truly *listens*. Whether you're speaking Urdu, English, or a natural mix of both, she understands the context, remembers your previous conversations, and responds with real-world emotions and perfectly synced animations.
 
 ---
 
-## ✨ Key Features
+## 🎓 How IRIS Works (The Human Connection)
 
-### 🎙️ Native Multilingual Understanding
-Iris uses Gemini's multimodal capabilities to understand **code-switching** perfectly. Speak naturally in Urdu/English mixed, and the AI handles the rest.
+If you're a student or new to the world of AI, you might wonder: *"How does a bunch of code actually talk and express emotions?"* Here is the big picture.
 
-### 🌔 Premium "Jarvis" Interface
-Switch between a sleek **Dark Mode** with vibrant orange accents and a sophisticated, glassmorphic **Light Mode** designed for clarity and depth.
+### 🎭 The Puppet Master (TalkingHead)
+In traditional 3D, animations are pre-made. But Iris is dynamic! We use a tool called **TalkingHead** to act as a **Puppet Master**.
+*   **Real-time Emotion**: Instead of playing a video, Iris's face moves as she thinks.
+*   **Lip Syncing**: She analyzes the actual sounds of her voice to decide how her mouth should move. This makes her feel alive, not just a static model.
 
-### 🛑 Real-time Interruption
-The **Stop/Cancel** feature instantly kills the audio stream, stops the avatar's mouth, and resets the brain for your next command.
-
-### 🔑 High-Availability Key Pool
-The backend features an automatic **4-key API rotation**. If one Gemini key hits a quota limit, the system rotates to the next one seamlessly.
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-- **React 18** + **Vite** (The engine that runs the UI)
-- **Three.js** + **TalkingHead.js** (The 3D world and avatar logic)
-- **Framer Motion** (The smooth "premium" animations you see)
-
-### Backend
-- **FastAPI** (The lightning-fast Python server)
-- **Google GenAI SDK** (Connection to the Gemini "Brains")
-- **WebSockets** (Real-time connection so Iris can talk back instantly)
+### 🧠 The Core Logic: How She Thinks
+1.  **She Hears You (Recording)**: When you speak, Iris records your voice. It’s not just a file; it’s the starts of a conversation.
+2.  **She Translates (Gemini 2.0)**: She uses a specialized "Multi-modal" model. This means she doesn't just read text; she can *understand audio*. This is how she can translate mixed Urdu/English (code-switching) perfectly.
+3.  **She Connects the Dots (The Brain)**: Iris uses **Gemini 3 Flash** to look at your current question and everything you've said before. This gives her a "memory."
+4.  **She Speaks (Voice)**: Her thoughts are turned into a voice that sounds natural, not robotic.
+5.  **She Moves (Animation)**: **TalkingHead** takes that voice and instantly tells her face how to react, blink, and move her lips.
 
 ---
 
-## 🚀 How to Run Iris
+## ✨ What Makes Her Special
 
-### 1. Prerequisites
+### 🎙️ Native Code-Switching
+Forget the limits of standard Siri or Alexa. Iris understands the way real people talk in Pakistan—mixing languages naturally without skipping a beat.
+
+### 🌔 Premium High-Tech Design
+Her interface is inspired by high-end sci-fi. A sleek **Dark Mode** for deep focus and a crisp, glassmorphic **Light Mode** that feels modern and premium.
+
+### 🛑 Real-time Control
+You can interrupt her at any time. If you start talking again, she instantly stops and resets her internal "mouth" to listen to you once more.
+
+---
+
+## 🛠️ The Build Stack
+
+### 💅 The Body (Frontend)
+- **React 18** (The structure)
+- **Three.js** (The 3D space)
+- **Framer Motion** (The smooth UI movement)
+
+### ⚙️ The Engine (Backend)
+- **FastAPI** (The lightning-fast server)
+- **GenAI SDK** (Access to the Gemini Brains)
+- **4-Key Rotation** (A smart safety system that swaps API keys automatically so she never goes "offline.")
+
+---
+
+## 🚀 Bring Iris to Life
+
+### 1. Requirements
 - **Python 3.10+** & **Node.js 18+**
-- Gemini API Keys ([Get them here for free](https://aistudio.google.com/))
+- Gemini API Keys ([Get one for free at AI Studio](https://aistudio.google.com/))
 
-### 2. Backend Setup
+### 2. Startup
 ```bash
+# Get the backend running
 cd backend
 python -m venv venv
-# Windows: .\venv\Scripts\activate | Mac/Linux: source venv/bin/activate
+# Enable venv, then:
 pip install -r requirements.txt
-# Put your API key in the .env file
-echo "GEMINI_API_KEY=your_key_here" > .env
-uvicorn main:app --port 8000 --reload
-```
+python -m uvicorn main:app --port 8000 --reload
 
-### 3. Frontend Setup
-```bash
+# Get the frontend running
 cd frontend
 npm install
 npm run dev
