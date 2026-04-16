@@ -142,10 +142,10 @@ export default function App() {
   const [isListening,   setIsListening]   = useState(false);
   const [sttLang,       setSttLang]       = useState("auto");
   const [messages,      setMessages]      = useState([
-    { role: 'user', text: "Iris, what's new in the world today? Also, can you tell me what's on my calendar for this week?" },
-    { role: 'ai', text: "Hello! The tech world is buzzing with new AI breakthroughs today. Looking at your calendar, you have a Final Project Presentation this Wednesday at 10 AM and a research sync on Friday. Would you like more details?" },
-    { role: 'user', text: "That's great! Set a reminder for me to review the final slides this Saturday at 7 PM." },
-    { role: 'ai', text: "Consider it done. I've noted a reminder for your slide review this Saturday at 19:00. I'll make sure you stay on track!" }
+    { role: 'user', text: "Iris, what's new on the feeds? Also, give me a quick rundown of my schedule for today." },
+    { role: 'ai', text: "Pulling updates... The tech feeds are reporting a major breakthrough in local-first LLMs, and NVIDIA's latest H200 benchmarks are breaking records. For your schedule: You have a Creative Sync at 11 AM, a Stakeholder Demo at 2:30 PM, and I've confirmed your dinner reservation at 'The Grill' for 7:30 PM tonight." },
+    { role: 'user', text: "Good to know. Set a reminder for the design review tomorrow and tell me to bring the latest prototypes." },
+    { role: 'ai', text: "Consider it done. I've noted a reminder for your Design Review tomorrow at 1:00 PM. I'll also send you a ping at 12:45 to make sure you have the physical prototypes ready!" }
   ]);
   const [wsStatus,      setWsStatus]      = useState("disconnected");
   const [voiceMode,     setVoiceMode]     = useState("browser");
